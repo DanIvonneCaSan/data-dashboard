@@ -16,7 +16,7 @@ function seleccionarOpcion() {
 
 
 
-  /*----------------------- CODIGO PARA LA SECCION DEL OVERVIEW ------------------------*/
+  /*----------------------- CODIGO PARA LA SECCION DEL DATADASHBOARD ------------------------*/
 
 
   //Código para acceder a las alumnas activas por sede y generacióne specificas
@@ -55,7 +55,7 @@ function seleccionarOpcion() {
   dropoutPorcentaje.textContent = inactivoPorcentaje;
 
 
-  /*------- ACHIEVEMENT (Meta de Estudiantes Tectico y HSE)----------------*/
+  /*------- ACHIEVEMENT (Meta de Estudiantes Técnico y HSE)----------------*/
   var metaStudent = 0;
 
   var totalActTech = 0;
@@ -105,9 +105,9 @@ function seleccionarOpcion() {
   console.log(nps);
 
 
-  var promoters = 0 / generacionEstudiantes * 100;
-  var passives = 0 / generacionEstudiantes * 100;
-  var detractors = 0 / generacionEstudiantes * 100;
+  var promoters = 0;
+  var passives = 0;
+  var detractors = 0;
   for (i = 0; i < calificacionesNps.length; i++) {
     promoters += (calificacionesNps[i]["nps"]["promoters"]) / calificacionesNps.length;
     passives += (calificacionesNps[i]["nps"]["passive"]) / calificacionesNps.length;
@@ -144,13 +144,13 @@ function seleccionarOpcion() {
     } else {
       statusValue = "Inactiva";
     }
-    for (var j = 0; j < arrayEstudiantes[l]["sprints"].length; j++) {
+   /* for (var j = 0; j < arrayEstudiantes[l]["sprints"].length; j++) {
       scoreTech += arrayEstudiantes[l]["sprints"][j]["score"]["tech"];
       scoreHSE += arrayEstudiantes[l]["sprints"][j]["score"]["hse"];
     }
 
     var promedioTech = ((scoreTech / arrayEstudiantes[l]["sprints"].length) * 100) / 1800;
-    var promedioHSE = ((scoreHSE / arrayEstudiantes[l]["sprints"].length) * 100) / 1200;
+    var promedioHSE = ((scoreHSE / arrayEstudiantes[l]["sprints"].length) * 100) / 1200;*/
 
     pintarCoders(nombre, promedioTech, promedioHSE, infActiva);
   }
@@ -261,10 +261,6 @@ function seleccionarOpcion() {
     studentsTab.appendChild(divContCoders);
   }
 
-
-
-
-
   /*----------------------- CODIGO PARA LA SECCION DE TEACHERS Y JEDIS ------------------------*/
 
   var califTotalTeacher = 0;
@@ -311,7 +307,7 @@ function seleccionarOpcion() {
     ]);
 
     var options1 = {
-      'title': 'Alumnas (Activas) vs Alumnas que han desertado',
+      'title': 'Alumnas activas y Alumnas NO activas',
       'width': 500,
       'height': 300,
       'colors': ['#000000', '#F7B617'],
@@ -332,7 +328,7 @@ function seleccionarOpcion() {
     ]);
 
     var options2 = {
-      'title': 'Estudiantes la meta de puntaje establecido (Sprint)',
+      'title': 'Estudiantes que cumplen la meta',
       'width': 500,
       'height': 300,
       'colors': ['#000000', '#F7B617'],
@@ -353,7 +349,7 @@ function seleccionarOpcion() {
     ]);
 
     var options3 = {
-      'title': 'Recomendarias LABORATORIA a otras personas',
+      'title': 'Recomendación de LABORATORIA',
       'width': 500,
       'height': 300,
       'colors': ['#000000', '#2B2B2B', '#F7B617'],
@@ -375,7 +371,7 @@ function seleccionarOpcion() {
     ]);
 
     var optionsTeacher = {
-      'title': 'Rating otorgado por las alumnas a sus junior y master teachers',
+      'title': 'Puntaje de los teachers',
       'width': 500,
       'height': 300,
       'colors': ['#000000', '#F7B617'],
@@ -396,7 +392,7 @@ function seleccionarOpcion() {
     ]);
 
     var optionsJedi = {
-      'title': 'Rating otorgado por las alumnas a sus Jedi Master',
+      'title': 'Puntaje de los Jedi Master',
       'width': 500,
       'height': 300,
       'colors': ['#000000', '#F7B617'],
